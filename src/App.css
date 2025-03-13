@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgb(25, 95, 95) 50%,
+    rgb(24, 107, 107) 50%
+  );
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.headerdiv {
+  height: 400px;
+  width: 100vw;
+  background-color: rgb(25, 95, 95);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* transform: translateX(1rem); */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.titlediv {
+  transform: translateY(-50px);
+  height: 60px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 5em;
+  font-weight: 100;
+  font-style: italic;
+  color: rgb(210, 228, 222);
+  opacity: 0.7;
+}
+
+.middlediv {
+  height: 60px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+
+  color: white;
+  background-color: rgb(25, 99, 99);
+  border-color: rgb(25, 95, 95, 0.5);
+}
+
+.middlediv h3 {
+  opacity: 0.8;
+  transform: translateX(350px);
+  font-weight: 400;
+  margin-left: 5rem;
+  animation: bounce 0.8s ease infinite alternate;
+}
+
+.inputdiv {
+  height: 100px;
+  /* border: 1px solid red; */
+  display: flex;
+
+  justify-content: center;
+  background-color: rgb(24, 107, 107, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.taskstext {
+  height: 40px;
+  width: 28%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(60px);
+
+  /* border: 1px solid red; */
+  margin-left: 2px;
+}
+
+.taskstext h2 {
+  color: rgb(212, 221, 218);
+  font-weight: 100;
+}
+
+.input {
+  /* border: 1px solid black; */
+  width: 60%;
+  height: 70%;
+  display: flex;
+  align-items: end;
+  margin-left: 5rem;
+}
+
+.linediv {
+  border: 1px solid rgb(230, 228, 228);
+  opacity: 0.5;
+  width: 60%;
+  margin-top: 2px;
+  margin-left: 5rem;
+}
+
+.taskinput {
+  width: 100%;
+  height: 60%;
+  /* border-radius: 5px; */
+  flex: 1;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  border-color: rgb(24, 107, 107);
+}
+
+.taskinput:focus {
+  outline: none;
+  font-size: 1.5rem;
+  color: rgb(210, 228, 222);
+}
+
+.taskinput::placeholder {
+  color: rgb(210, 228, 222);
+
+  opacity: 0.5;
+  font-size: 1rem;
+}
+.addbtn {
+  /* background-color: rgba(166, 186, 194, 0.5); */
+  /* height: 40px; */
+  /* margin-left: 10px; */
+  /* padding: 10px 20px; */
+}
+
+.maincontainer {
+  /* border: 1px solid red; */
+  height: 100px;
+  width: 100vw;
+  background-color: rgba(12, 71, 71, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  border-radius: 10px;
+  animation-name: taskcontainer;
+  animation-delay: 0ms;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+.taskcontainer {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  height: 70%;
+  background-color: rgb(54, 122, 122, 0.5);
+  /* background-color: white; */
+  gap: 4px;
+  align-items: center;
+  width: 90%;
+  border-radius: 5px;
+  overflow-x: auto;
+  overflow-y: auto;
+  color: black;
+}
+.editinput {
+  height: 50%;
+  width: 30%;
+
+  background-color: rgb(210, 228, 222);
+
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+.editinput:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.deletebtn {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  /* background-color: rgb(56, 109, 109); */
+}
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow-x: auto;
+  /* overflow-y: auto; */
+}
+
+.date {
+  background-color: transparent;
+  border: none;
+  font-size: 13px;
+  /* color: rgb(210, 228, 222); */
+}
+
+.date:focus {
+  outline: none;
+}
+
+@keyframes taskcontainer {
+  from {
+    transform: translateY(300px);
+  }
+
+  to {
+    transform: translateY(-0px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+
+
+
+
+
+ 
+
+
+
+@media screen and (max-width: 640px) {
+  body {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .headerdiv {
+    width: 100%;
+  }
+
+  .maincontainer {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .taskinput {
+    flex: 1;
+  }
+
+  .deletebtn {
+    width: 40px;
+  }
+
+  .taskinput::placeholder {
+    white-space: pre-line;
+  }
+
+  .taskinput:focus {
+    font-size: 1rem;
+  }
+
+  .addbtn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .taskcontainer {
+    width: 95%;
+    height: 90%;
+    overflow-x: auto;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}

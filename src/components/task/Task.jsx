@@ -1,7 +1,31 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteTodo } from "../../brain/features/todos";
+import { editTodo } from "../../brain/features/todos";
 
-const Task = ({ Task, tasks, setTasks, id }) => {
+const Task = ({ Task, id }) => {
+  // function TaskComponent({ todo }) {
+  //   const dispatch = useDispatch();
+  // }
+
+  const dispatch = useDispatch();
+
   const [isEdit, setIsEdit] = useState(false);
+
+  function handleDeleteTask() {
+    // setTasks(tasks.filter((task) => task.id != id));
+    dispatch(deleteTodo(id));
+  }
+
+  // const [editTask, setEditTask] = useState([]);
+
+  // const handleChangeTask = (e) => {
+  //   setEditTask(e.target.value);
+  // };
+
+  function handleTaskEdit() {
+    setIsEdit(true);
+  }
 
   const [editTaskValue, setEditTaskValue] = useState(Task);
 
@@ -9,35 +33,23 @@ const Task = ({ Task, tasks, setTasks, id }) => {
     setEditTaskValue(e.target.value);
   };
 
-  function handleDeleteTask() {
-    setTasks(tasks.filter((task) => task.id != id));
-  }
-
-  const [editTask, setEditTask] = useState([]);
-
-  const handleChangeTask = (e) => {
-    setEditTask(e.target.value);
-  };
-
-  function handleTaskEdit() {
-    setIsEdit(true);
-  }
-
   const handleSaveTaskUpdate = () => {
-    setTasks(
-      tasks.map((task) => ({
-        ...task,
-        title: task.id == id ? editTaskValue : task.title,
-      }))
-    );
+    // dispatch(editTodo( {id,newTitle:editTaskValue}));
+
+    if (editTaskValue) dispatch(editTodo({ id, newTitle: editTaskValue }));
 
     setIsEdit(false);
+
+    // setTasks(
+    //   tasks.map((task) => ({
+    //     ...task,
+    //     title: task.id == id ? editTaskValue : task.title,
+    //   }))
+    // );
   };
 
   return (
     <div className="maincontainer">
-        
-
       {isEdit ? (
         <div className="taskcontainer">
           <input
@@ -50,10 +62,11 @@ const Task = ({ Task, tasks, setTasks, id }) => {
           <button onClick={handleSaveTaskUpdate} className="deletebtn">
             Save
           </button>
+          //{" "}
         </div>
       ) : (
         <div className="taskcontainer">
-          <input type="checkbox"  />
+          <input type="checkbox" />
 
           <p>{Task}</p>
 
@@ -61,9 +74,9 @@ const Task = ({ Task, tasks, setTasks, id }) => {
             del
           </button>
           <button onClick={handleTaskEdit} className="deletebtn">
-           edit
+            edit
           </button>
-          <input type="time" className="date"/>
+          <input type="time" className="date" />
         </div>
       )}
     </div>

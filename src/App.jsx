@@ -3,27 +3,20 @@ import Header from "./components/header/Header";
 import Task from "./components/task/Task";
 
 import "./App.css";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-
+  const {todos }= useSelector((store) => store.todoReducer);
+  // const [tasks, setTasks] = useState([]);
+  // console.log(todos);
   return (
     <>
-
-    
-      <Header Tasks={tasks} setTasksController={setTasks} />
+      <Header />
       <section>
-        {tasks.map((x) => (
-          <Task
-            key={x.id}
-            Task={x.title}
-            id={x.id}
-            tasks={tasks}
-            setTasks={setTasks}
-          />
+        {todos.map((x) => (
+          <Task key={x.id} Task={x.title} id={x.id} />
         ))}
       </section>
-      
     </>
   );
 }

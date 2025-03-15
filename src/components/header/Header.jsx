@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import  {AiOutlineHome} from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../brain/features/todos";
 
+const Header = () => {
+  const dispatch = useDispatch();
 
-const Header = ({ Tasks, setTasksController }) => {
   const [task, setTask] = useState("");
 
   const todo = { title: task, id: Date.now() };
 
   function handleTaskSubmit() {
-    console.log(task);
-    setTasksController([...Tasks, todo]); //add new task when clicking on button
+    dispatch(addTodo(todo));
+    // console.log(task);
+    // setTasksController([...Tasks, todo]); //add new task when clicking on button
     setTask("");
   }
 
@@ -45,9 +48,7 @@ const Header = ({ Tasks, setTasksController }) => {
       </div>
 
       <div className="taskstext">
-        
-        < h2>RECENT NOTES</h2>
-      
+        <h2>RECENT NOTES</h2>
       </div>
     </div>
   );

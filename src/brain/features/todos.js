@@ -1,8 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const getTodos = createAsyncThunk("getTodos", async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const todos = await response.json();
+  console.log(todos);
+  return todos;
+});
 
 export const todoReducer = createSlice({
   name: "todoReducer",
-  initialState: { todos: [] },
+  initialState: { todos: [], isLoading: false },
   reducers: {
     addTodo: (state, action) => {
       const { title, id } = action.payload;
@@ -36,6 +43,17 @@ export const todoReducer = createSlice({
         editedTask.title = newTitle;
       }
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getTodos.pending, (state, action) => {
+      state.isLoading=true;
+      // state.todos = action.payload;
+    });
+
+    builder.addCase(getTodos.fulfilled, (state, action) => {
+      state.todos = action.payload;
+      state.isLoading=false;
+    });
   },
 });
 

@@ -248,15 +248,6 @@ p {
   }
 }
 
-
-
-
-
-
- 
-
-
-
 @media screen and (max-width: 640px) {
   body {
     width: 100vw;
@@ -308,4 +299,216 @@ p {
     overflow-x: auto;
     overflow-y: auto;
   }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  animation-name: taskcontainer;
+  animation-delay: 0ms;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+.closeBtnDiv {
+  position: relative;
+  border: 1px solid white;
+  width: 100%;
+  height: 4rem;
+  /* padding: 1rem 1rem; */
+}
+.closeBtn {
+  position: absolute;
+  color: red;
+  right: 0;
+  top: 0;
+}
+
+.menudiv {
+  /* background-color: red; */
+  height: 91.5vh;
+
+  width: 99.8vw;
+  border: 1px solid white;
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: taskcontainer;
+  animation-delay: 0ms;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+.listdiv {
+  height: 80vh;
+  width: 30vw;
+  background-color: white;
+  display: grid;
+  position: fixed;
+  /* z-index: 4; */
+}
+
+li {
+  text-align: center;
+}
+
+@keyframes taskcontainer {
+  from {
+    transform: translateX(-2000px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+/*SIGNIN PAGE DISPLAY*/
+
+.signin-maincontainer {
+  border: 1px solid black;
+  height: 99.6vh;
+  width: 99.8vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(9, 50, 50,0.5); */
+  background-color: rgb(5, 36, 36, 0.8);
+}
+
+.formdiv {
+  border: 1px solid transparent;
+  height: 60vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(232, 240, 240, 0.15);
+  border-radius: 15px;
+}
+
+.signupdiv {
+  display: flex;
+  color: rgb(5, 36, 36);
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 4px;
+}
+
+.relativee {
+  border: 2px solid rgb(5, 36, 36);
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  width: 70%;
+}
+
+.signin-input {
+  outline: none;
+  margin-left: 3rem;
+  border: none;
+  background-color: transparent;
+  width: 60%;
+}
+.signin-input:focus {
+  font-size: 14px;
+}
+
+.signin-input::placeholder {
+  font-size: 1rem;
+  opacity: 0.4;
+  color: gray;
+  text-align: center;
+}
+
+b {
+  color: white;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+.signintext {
+  font-size: 2em;
+  color: white;
+  font-weight: 100;
+  padding-bottom: 1rem;
+}
+
+.submitbtn {
+  border: transparent;
+  width: 300px;
+  background-color: rgb(5, 36, 36);
+  /* opacity: 0.7; */
+  border-color: transparent;
+  color: white;
+  border-radius: 15px;
+}
+.submitbtn:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  margin-right: 16rem;
+}
+.Link {
+  color: white;
+}
+
+.input-icon {
+  color: white;
+  stroke-width: 20px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.input-iconn {
+  color: white;
+  stroke-width: 20px;
+
+  fill: none;
+  transform: translateX(35px);
+}
+
+/*SIGNUP PAGE DISPLAY*/
+
+.formdiv2 {
+  border: 1px solid transparent;
+  height: 80vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(232, 240, 240, 0.15);
+  border-radius: 15px;
+}
+
+input[type="date"] {
+  margin-left: 4rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.3rem;
+  opacity: 0.4;
+}
+
+.checkbox {
+  display: flex;
+
+  gap: 3rem;
 }

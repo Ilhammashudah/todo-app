@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App.jsx";
 import { brain } from "./brain/store.js";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider store={brain}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={brain}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </StrictMode>
 );

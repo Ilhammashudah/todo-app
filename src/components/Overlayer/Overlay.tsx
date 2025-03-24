@@ -1,6 +1,5 @@
 import React from "react";
 import { IoRemoveCircle } from "react-icons/io5";
-import { MdRemove } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { close } from "../../brain/features/toggle";
 

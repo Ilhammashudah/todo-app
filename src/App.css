@@ -416,7 +416,7 @@ li {
   outline: none;
   margin-left: 3rem;
   border: none;
-  background-color: none;
+  background-color:transparent ;
   width: 60%;
 }
 .signin-input:focus {

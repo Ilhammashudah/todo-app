@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../../brain/features/todos";
 import { FiMenu } from "react-icons/fi";
-import Overlay from "../Overlayer/overlay";
 import { open } from "../../brain/features/toggle";
 
 const Header = () => {
@@ -32,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      {isToggle && <Overlay />}
+      {/* {isToggle && <Overlay />} */}
 
       <div className="headerdiv">
         <div className="relative" style={{ zIndex: 4 }}>

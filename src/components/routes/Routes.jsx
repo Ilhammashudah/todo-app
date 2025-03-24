@@ -7,7 +7,6 @@ const Routes_ = () => {
   return (
     <Routes>
       <Route path={"/"} element={<SignIn />} />
-
       <Route path={"/SignUp"} element={<SignUp />} />
     </Routes>
   );

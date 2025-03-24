@@ -1,5 +1,5 @@
 import FormBuilder2 from "../../Formbuilder/FormBuilder2"; 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 const Signup = () => {
 
